@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zonnig Strand</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <style>
+    body { margin: 0; }
+    #startGeluid {
+      position: fixed;
+      z-index: 999;
+      top: 15px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px 22px;
+      background: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<button id="startGeluid">Start strandervaring 🔊</button>
+
+<audio id="strandGeluid" src="stereogenicstudio-beach-02-404144.mp3" preload="auto" loop></audio>
+
+<a-scene background="color: #87CEEB" renderer="colorManagement: true; physicallyCorrectLights: true">
+
+  <a-assets>
+    <a-asset-item id="tent" src="Assets/tent.glb"></a-asset-item>
+    <a-asset-item id="campfire" src="Assets/campfire-pit.glb"></a-asset-item>
+  </a-assets>
+
+  <a-sky color="#87CEEB"></a-sky>
+
+  <a-plane
+    position="0 0 0"
+    rotation="-90 0 0"
+    width="100"
+    height="100"
+    material="color: #ffe5a3; roughness: 1">
+  </a-plane>
+
+  <a-plane
+    position="0 0.04 -50"
+    rotation="-90 0 0"
+    width="100"
+    height="40"
+    material="color: #29c5f6; roughness: 0.25">
+  </a-plane>
+
+  <a-sphere
+    position="-20 18 -45"
+    radius="4"
+    material="color: #fffde7; shader: flat; emissive: #fff176; emissiveIntensity: 2">
+    <a-entity
+      light="type: point; color: #ffeb3b; intensity: 3; distance: 80; decay: 2">
+    </a-entity>
+  </a-sphere>
+
+  <a-entity
+    light="type: ambient; color: #d0e8ff; intensity: 0.8">
+  </a-entity>
+
+  <a-entity
+    light="type: directional; color: #fff8e1; intensity: 2.2"
+    position="-20 18 -45">
+  </a-entity>
+
+  <a-entity
+    gltf-model="#tent"
+    position="8 0.2 3"
+    scale="8 8 8"
+    animation="property: rotation; to: 0 360 0; dur: 12000; easing: linear; loop: true">
+  </a-entity>
+
+  <a-entity
+    gltf-model="#campfire"
+    position="-8 0 0"
+    scale="10 10 10">
+  </a-entity>
+
+  <a-entity position="-5 0 -8">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+    <a-cone position="0 5.5 0" radius-bottom="1.5" radius-top="0" height="2.5" color="#32b34a"></a-cone>
+  </a-entity>
+
+  <a-entity position="5 0 -10">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+    <a-cone position="0 5.5 0" radius-bottom="1.5" radius-top="0" height="2.5" color="#32b34a"></a-cone>
+  </a-entity>
+
+  <a-entity position="-15 0 -5">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+    <a-cone position="0 5.5 0" radius-bottom="1.5" radius-top="0" height="2.5" color="#32b34a"></a-cone>
+  </a-entity>
+
+  <a-entity position="15 0 -8">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+    <a-cone position="0 5.5 0" radius-bottom="1.5" radius-top="0" height="2.5" color="#32b34a"></a-cone>
+  </a-entity>
+
+  <a-entity position="-20 0 8">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+  </a-entity>
+
+  <a-entity position="20 0 8">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+  </a-entity>
+
+  <a-entity position="-25 0 -15">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+  </a-entity>
+
+  <a-entity position="25 0 -20">
+    <a-cylinder position="0 2 0" radius="0.3" height="4" color="#8b5a2b"></a-cylinder>
+    <a-cone position="0 4.5 0" radius-bottom="2" radius-top="0" height="3" color="#228b22"></a-cone>
+  </a-entity>
+
+  <a-sphere position="-3 0.6 -8" radius="0.6" color="#ff3030"></a-sphere>
+  <a-sphere position="0 0.6 -10" radius="0.6" color="#ffe600"></a-sphere>
+  <a-sphere position="3 0.6 -8" radius="0.6" color="#ff69b4"></a-sphere>
+  <a-sphere position="12 0.6 -5" radius="0.6" color="#7c4dff"></a-sphere>
+  <a-sphere position="-12 0.6 -10" radius="0.6" color="#00d9ff"></a-sphere>
+  <a-sphere position="15 0.6 3" radius="0.6" color="#ff8c00"></a-sphere>
+  <a-sphere position="-15 0.6 4" radius="0.6" color="#39e75f"></a-sphere>
+  <a-sphere position="7 0.6 -15" radius="0.6" color="#ff3030"></a-sphere>
+  <a-sphere position="-8 0.6 -18" radius="0.6" color="#ff69b4"></a-sphere>
+
+  <a-entity position="-10 0 -2">
+    <a-cylinder position="0 1.5 0" radius="0.08" height="3" color="#ffffff"></a-cylinder>
+    <a-cone position="0 3 0" radius-bottom="1.5" radius-top="0" height="0.8" color="#ff5252"></a-cone>
+  </a-entity>
+
+  <a-entity position="10 0 -3">
+    <a-cylinder position="0 1.5 0" radius="0.08" height="3" color="#ffffff"></a-cylinder>
+    <a-cone position="0 3 0" radius-bottom="1.5" radius-top="0" height="0.8" color="#00bfff"></a-cone>
+  </a-entity>
+
+  <a-entity position="-15 0 2">
+    <a-cylinder position="0 1.5 0" radius="0.08" height="3" color="#ffffff"></a-cylinder>
+    <a-cone position="0 3 0" radius-bottom="1.5" radius-top="0" height="0.8" color="#ffeb3b"></a-cone>
+  </a-entity>
+
+  <a-entity position="17 0 5">
+    <a-cylinder position="0 1.5 0" radius="0.08" height="3" color="#ffffff"></a-cylinder>
+    <a-cone position="0 3 0" radius-bottom="1.5" radius-top="0" height="0.8" color="#e040fb"></a-cone>
+  </a-entity>
+
+  <a-entity position="0 0 5" rotation="0 20 0">
+    <a-box position="0 0.5 0" width="1" height="0.15" depth="2" color="#ffffff"></a-box>
+    <a-box position="0 0.6 0" width="1" height="0.12" depth="1.8" color="#ff5252"></a-box>
+    <a-cylinder position="0 0.3 -0.7" radius="0.04" height="0.6" color="#888888"></a-cylinder>
+    <a-cylinder position="0 0.3 0.7" radius="0.04" height="0.6" color="#888888"></a-cylinder>
+  </a-entity>
+
+  <a-entity position="12 0 8" rotation="0 -20 0">
+    <a-box position="0 0.5 0" width="1" height="0.15" depth="2" color="#ffffff"></a-box>
+    <a-box position="0 0.6 0" width="1" height="0.12" depth="1.8" color="#00bfff"></a-box>
+    <a-cylinder position="0 0.3 -0.7" radius="0.04" height="0.6" color="#888888"></a-cylinder>
+    <a-cylinder position="0 0.3 0.7" radius="0.04" height="0.6" color="#888888"></a-cylinder>
+  </a-entity>
+
+  <a-sphere
+    id="schelp"
+    position="0 0.65 -4"
+    radius="0.8"
+    scale="1 0.35 1"
+    color="#fff0d0"
+    animation__hover="property: scale; to: 1.15 0.45 1.15; dur: 500; startEvents: mouseenter"
+    animation__leave="property: scale; to: 1 0.35 1; dur: 500; startEvents: mouseleave"
+    animation__click="property: position; to: 0 4 -4; dur: 400; dir: alternate; repeat: 1; startEvents: click">
+  </a-sphere>
+
+  <a-ring position="0 0.66 -4" rotation="-90 0 0" radius-inner="0.2" radius-outer="0.65" color="#e5a9a9"></a-ring>
+
+  <a-text value="KLIK OP DE SCHELP!" position="-1.5 2 -4" scale="1.4 1.4 1.4" color="#ffffff" align="center"></a-text>
+
+  <a-camera id="camera" position="0 2 4">
+    <a-cursor color="#ffffff" fuse="false"></a-cursor>
+  </a-camera>
+
+</a-scene>
+
+<script>
+const audio = document.querySelector("#strandGeluid");
+const camera = document.querySelector("#camera");
+const knop = document.querySelector("#startGeluid");
+const schelp = document.querySelector("#schelp");
+
+let toegestaan = false;
+
+knop.addEventListener("click", async () => {
+  try {
+    audio.volume = 0;
+    await audio.play();
+    audio.pause();
+    audio.currentTime = 0;
+    toegestaan = true;
+    knop.textContent = "Loop naar het water 🌊";
+  } catch (error) {
+    knop.textContent = "Klik opnieuw om geluid te starten";
+  }
+});
+
+function controleerGeluid() {
+  if (!toegestaan) return;
+
+  const positie = camera.object3D.position;
+  const afstand = Math.abs(positie.z + 30);
+
+  if (afstand < 15) {
+    audio.volume = Math.min(1, Math.max(0.05, (15 - afstand) / 15));
+
+    if (audio.paused) {
+      audio.play().catch(() => {});
+    }
+  } else {
+    if (!audio.paused) {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  }
+}
+
+setInterval(controleerGeluid, 200);
+
+schelp.addEventListener("click", async () => {
+  toegestaan = true;
+  audio.volume = 1;
+
+  try {
+    await audio.play();
+  } catch (error) {}
+});
+</script>
+
+</body>
+</html>
